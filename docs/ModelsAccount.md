@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **isCanceled** | **Boolean** |  | [optional] 
 **isLastPaymentFailed** | **Boolean** |  | [optional] 
 **isUpgraded** | **Boolean** |  | [optional] 
+**isAdmin** | **Boolean** |  | [optional] 
 **lockThreshold** | **Number** |  | [optional] 
 **locked** | **Boolean** |  | [optional] 
 **logoURL** | **String** |  | [optional] 

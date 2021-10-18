@@ -95,12 +95,14 @@ Please follow the [installation](#installation) instruction and execute the foll
 ```javascript
 var SendPostApi = require('send_post_api');
 
-var api = new SendPostApi.AccountalertApi()
+var api = new SendPostApi.AccountadminApi()
 
 var xAccountApiKey = "xAccountApiKey_example"; // {String} Account API Key
 
+var email = "email_example"; // {String} email
+
 var opts = { 
-  'search': "search_example" // {String} search term
+  'uid': "uid_example" // {String} firebase uid if you have
 };
 
 var callback = function(error, data, response) {
@@ -110,7 +112,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.alertRouterCount(xAccountApiKey, opts, callback);
+api.accountAdminRouterAssumeAccountGetToken(xAccountApiKey, email, opts, callback);
 
 ```
 
@@ -120,6 +122,7 @@ All URIs are relative to *http://127.0.0.1:8081/api/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*SendPostApi.AccountadminApi* | [**accountAdminRouterAssumeAccountGetToken**](docs/AccountadminApi.md#accountAdminRouterAssumeAccountGetToken) | **GET** /account/admin/assume | 
 *SendPostApi.AccountalertApi* | [**alertRouterCount**](docs/AccountalertApi.md#alertRouterCount) | **GET** /account/alert/count | 
 *SendPostApi.AccountalertApi* | [**alertRouterCreateAlert**](docs/AccountalertApi.md#alertRouterCreateAlert) | **POST** /account/alert/ | 
 *SendPostApi.AccountalertApi* | [**alertRouterDelete**](docs/AccountalertApi.md#alertRouterDelete) | **DELETE** /account/alert/{alertId} | 
@@ -410,6 +413,7 @@ Class | Method | HTTP request | Description
  - [SendPostApi.ModelsProviderType](docs/ModelsProviderType.md)
  - [SendPostApi.ModelsQEmailMessage](docs/ModelsQEmailMessage.md)
  - [SendPostApi.ModelsQEvent](docs/ModelsQEvent.md)
+ - [SendPostApi.ModelsRAssumeAccount](docs/ModelsRAssumeAccount.md)
  - [SendPostApi.ModelsRDSuppression](docs/ModelsRDSuppression.md)
  - [SendPostApi.ModelsRGlockappsMonitorStat](docs/ModelsRGlockappsMonitorStat.md)
  - [SendPostApi.ModelsRIPStat](docs/ModelsRIPStat.md)
